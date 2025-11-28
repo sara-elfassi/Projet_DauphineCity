@@ -19,11 +19,17 @@ public class GloutonRetraitSolver {
 			List<Objet> objets,
 			SacADos sac_a_dos) {
 		
-		if (comparateur_ajout != ComparateurObjets.comparateur_max &&
-			comparateur_ajout != ComparateurObjets.comparateur_somme)
-	         {throw new IllegalArgumentException(
-	         "Le comparateur doit être comparateur_max ou comparateur_somme");
-			 }
+        if (!(comparateur_retrait instanceof CompSomme
+            || comparateur_retrait instanceof CompMax
+            || comparateur_retrait instanceof CompMaxDepasse)) {
+              throw new IllegalArgumentException("Comparateur de reatrait non autorisé");
+        }
+        
+        if (!(comparateur_ajout instanceof CompSomme
+            || comparateur_ajout instanceof CompMax
+            || comparateur_ajout instanceof CompMaxDepasse)) {
+              throw new IllegalArgumentException("Comparateur d'ajout non autorisé");
+          }
 
         this.comparateur_retrait = comparateur_retrait;
         this.comparateur_ajout = comparateur_ajout;
@@ -55,6 +61,14 @@ public class GloutonRetraitSolver {
 			}
 		}
 		return S;
+	}
+	
+	
+	public void afficher_solution() {
+	    System.out.println("Résolution par méthode à retrait, en utilisant un " + comparateur_retrait
+	    		+ " pour le retrait, et un " + comparateur_ajout + " pour l'ajout :");
+	    sac_a_dos.afficherContenu(objets_a_mettre());
+	    System.out.println();
 	}
 			
 }

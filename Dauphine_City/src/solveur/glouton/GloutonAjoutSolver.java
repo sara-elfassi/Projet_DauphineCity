@@ -15,13 +15,12 @@ public class GloutonAjoutSolver {
 	public GloutonAjoutSolver(
 			Comparator<Objet> comparateur,
 			List<Objet> objets,
-			SacADos sac_a_dos)
+			SacADos sac_a_dos) {
 			
-		{if (comparateur != ComparateurObjets.comparateur_max &&
-            comparateur != ComparateurObjets.comparateur_somme) {
-            throw new IllegalArgumentException(
-                "Le comparateur doit être comparateur_max ou comparateur_somme");
-			}
+		if (!(comparateur instanceof CompSomme
+			|| comparateur instanceof CompMax)) {
+			throw new IllegalArgumentException("Comparateur non autorisé");
+		}
 	
 		this.comparateur = comparateur;
 		this.objets = objets;
@@ -41,5 +40,13 @@ public class GloutonAjoutSolver {
 				S.remove(objet);
 		}
 		return S;
-	}	
+	}
+	
+	
+	public void afficher_solution() {
+	    System.out.println("Résolution par méthode à ajout, en utilisant un " + comparateur + " :");
+	    sac_a_dos.afficherContenu(objets_a_mettre());
+	    System.out.println();
+	}
+			
 }
