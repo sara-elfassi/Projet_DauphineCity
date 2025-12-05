@@ -20,7 +20,7 @@ public class Main_Equipe {
                 LocalDate.of(1980, 5, 10),
                 generateurBenefice);
 
-        EvaluateurCout evalEco = new EvaluateurCout("Bernardins", "Titien",
+        EvaluateurCout evalEco = new EvaluateurCout("Bernardin", "Titien",
                 LocalDate.of(1985, 3, 20),
                 TypeCout.ECONOMIQUE,
                 generateurCout);
