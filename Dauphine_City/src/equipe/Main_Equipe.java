@@ -16,31 +16,31 @@ public class Main_Equipe {
         GenerateurBenefice generateurBenefice =
                 new GenerateurBeneficeAleatoireNormal(randomGlobal);
 
-        Elu elu = new Elu("Delerue", "Eloise",
+        Elu elu = new Elu("Delavenue", "Eloise",
                 LocalDate.of(1980, 5, 10),
                 generateurBenefice);
 
-        EvaluateurCout evalEco = new EvaluateurCout("Bernard", "Titien",
+        EvaluateurCout evalEco = new EvaluateurCout("Bernardins", "Titien",
                 LocalDate.of(1985, 3, 20),
                 TypeCout.ECONOMIQUE,
                 generateurCout);
 
-        EvaluateurCout evalSocial = new EvaluateurCout("Lapray", "Lucile",
+        EvaluateurCout evalSocial = new EvaluateurCout("Laprairie", "Lucile",
                 LocalDate.of(1982, 7, 15),
                 TypeCout.SOCIAL,
                 generateurCout);
 
-        EvaluateurCout evalEnv = new EvaluateurCout("Gariazzo", "Emilie",
+        EvaluateurCout evalEnv = new EvaluateurCout("Gariasso", "Emilie",
                 LocalDate.of(1990, 1, 5),
                 TypeCout.ENVIRONNEMENTAL,
                 generateurCout);
 
-        Expert expert1 = new Expert("Touileb", "Yacine",
+        Expert expert1 = new Expert("Tononleb", "Yacine",
                 LocalDate.of(1970, 9, 30),
                 Set.of(Secteur.SPORT, Secteur.SANTE),
                 randomGlobal);
 
-        Expert expert2 = new Expert("Rebours", "Lena",
+        Expert expert2 = new Expert("Retrait", "Lena",
                 LocalDate.of(1968, 11, 12),
                 Set.of(Secteur.CULTURE, Secteur.EDUCATION, Secteur.ATTRACTIVITE_ECONOMIQUE),
                 randomGlobal);
