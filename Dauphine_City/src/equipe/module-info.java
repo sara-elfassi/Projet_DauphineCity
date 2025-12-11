@@ -1,8 +1,3 @@
-/**
- * 
- */
-/**
- * 
- */
+
 module Dauphine_City {
 }

@@ -60,7 +60,7 @@ public class SacADos {
 		}
 		return true;
 	}
-
+	
 	
 	public int getDimension() {
 		return dimension;
@@ -73,4 +73,33 @@ public class SacADos {
 	public List<Objet> getObjets() {
 		return objets;
 	}
+	
+	
+	
+	
+	
+	// j'ai ajouté (Sara A. ) ces 2 methodes
+	public int utilite(List<Objet> solution) {
+	    int total = 0;
+	    for (Objet o : solution) {
+	        total += o.getUtilite();
+	    }
+	    return total;
+	}
+	
+	public List<Objet> solution_initiale_aleatoire() {
+	    List<Objet> sol = new ArrayList<>();
+	    List<Objet> listeMelangee = new ArrayList<>(objets);
+	    java.util.Collections.shuffle(listeMelangee);
+	    for (Objet o : listeMelangee) {
+	        sol.add(o);
+	        if (!respecte_budget(sol)) {
+	            sol.remove(o);
+	        }
+	    }
+	    return sol;
+	}
+
+
+
 }
