@@ -78,7 +78,7 @@ public class SacADos {
 	
 	
 	
-	// j'ai ajouté (Sara A. ) ces 2 methodes
+	// j'ai ajouté  ces 2 methodes pour Hill Climbing
 	public int utilite(List<Objet> solution) {
 	    int total = 0;
 	    for (Objet o : solution) {
