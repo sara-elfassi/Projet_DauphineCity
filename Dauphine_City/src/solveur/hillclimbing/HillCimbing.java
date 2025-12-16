@@ -44,8 +44,8 @@ public class HillCimbing {
      * @param nb_voisins_alea_max nombre maximal de voisins aléatoire possible
      */
     public HillCimbing(Voisinage voisinage, boolean plateau,boolean voisins_aleatoires, int nb_iterations, int nb_redemarrage,int nb_voisins_alea_max) {
-        this.voisinage = voisinage;
-        this.plateau = plateau;
+        this.voisinage = voisinage ;
+        this.plateau = plateau ; 
         this.voisins_aleatoires = voisins_aleatoires;
         this.nb_iterations = nb_iterations;
         this.nb_redemarrage = nb_redemarrage;
