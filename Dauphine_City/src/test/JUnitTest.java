@@ -21,6 +21,7 @@ class HillClimbingTest {
 
     @BeforeEach
     void setUp() {
+
         objets = new ArrayList<>();
         objets.add(new Objet("A", 10, new int[]{5}));
         objets.add(new Objet("B", 20, new int[]{10}));
@@ -46,14 +47,14 @@ class HillClimbingTest {
     void testNouveauxVoisins() {
         Voisinage voisinage = new Voisinage(1);
         List<Objet> solution = new ArrayList<>();
-        solution.add(objets.get(0));
+        solution.add(objets.get(0)); 
 
         List<List<Objet>> voisins = voisinage.nouveaux_voisins(solution, sac);
 
+       
         for (List<Objet> voisin : voisins) {
             assertTrue(sac.respecte_budget(voisin), "Chaque voisin doit respecter le budget");
         }
-
         assertFalse(voisins.isEmpty(), "Il doit y avoir au moins un voisin généré");
     }
 }
