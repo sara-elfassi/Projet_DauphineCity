@@ -20,10 +20,10 @@ public class Main {
 	    	p1.setCoutEnvironnemental(new BigDecimal(5));
 	    	// Projet 2 : Hôpital, secteur SANTE 
 	    	Projet p2 = new Projet("Hôpital", "Construction d'un hôpital", Secteur.SANTE);
-	    	p2.setBenefice(new BigDecimal(80));
-	    	p2.setCoutEconomique(new BigDecimal(40));
+	    	p2.setBenefice( new BigDecimal(80));
+	    	p2.setCoutEconomique (new BigDecimal(40));
 	    	p2.setCoutSocial(new BigDecimal(20));
-	    	p2.setCoutEnvironnemental(new BigDecimal(10));
+	    	p2.setCoutEnvironnemental(new  BigDecimal(10));
 	    	projets.add(p1);
 	    	projets.add(p2);
 	       

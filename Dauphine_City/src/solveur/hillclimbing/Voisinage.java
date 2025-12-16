@@ -31,10 +31,10 @@ public class Voisinage {
      * @throws IllegalArgumentException si t n'est pas égal à 1 ou 2
      */
     public Voisinage(int t) {
-        if (t <1 || t >2) {
-            throw new  IllegalArgumentException("t doit être égal à 1 ou 2");
+        if (t <1 || t > 2) {
+            throw new  IllegalArgumentException("t doit être  égal à 1 ou 2");
         }
-        this.t = t;
+        this.t =t;
     }
 
     /**

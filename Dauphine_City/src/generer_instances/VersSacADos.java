@@ -26,11 +26,11 @@ public class VersSacADos {
      * @return instance de SacADos
      */
     public static SacADos generer_sac_3_couts(List<Projet>  projets,  int[] budgets) {
-        List<Objet> objets = new  ArrayList<>();
+        List<Objet> objets = new   ArrayList<>();
         for (Projet p : projets) {
             if (!p.estComplet()) continue; // ignorer les projets incomplets
             int utilite = p.getBenefice().intValue();
-            int[] couts = new int[]{
+            int[] couts =new int[]{
                 p.getCoutEconomique().intValue(),
                 p.getCoutSocial().intValue(),
                 p.getCoutEnvironnemental().intValue()

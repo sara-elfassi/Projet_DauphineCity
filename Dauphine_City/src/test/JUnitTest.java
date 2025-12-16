@@ -33,28 +33,28 @@ class HillClimbingTest {
     @Test
     void testHillClimbAmelioration() {
         Voisinage voisinage = new Voisinage(1);
-        HillCimbing hc = new HillCimbing(voisinage, true, false, 100, 1, 2);
+        HillCimbing hc = new HillCimbing(voisinage, true, false,  100, 1, 2);
 
-        List<Objet> solutionInitiale = new ArrayList<>();
-        List<Objet> solutionOptimale = hc.hillClimb(sac, solutionInitiale);
+        List<Objet> solutionInitiale =new ArrayList<>();
+        List<Objet>solutionOptimale = hc.hillClimb(sac, solutionInitiale);
 
         int utilInitiale = sac.utilite(solutionInitiale);
         int utilOptimale = sac.utilite(solutionOptimale);
-        assertTrue(utilOptimale >= utilInitiale, "La solution doit avoir une utilité au moins égale à l'initiale");
+        assertTrue(utilOptimale>= utilInitiale ,  "La solution doit avoir une utilité au moins égale à l'initiale");
     }
 
     @Test
     void testNouveauxVoisins() {
         Voisinage voisinage = new Voisinage(1);
-        List<Objet> solution = new ArrayList<>();
+        List<Objet> solution =new ArrayList<>();
         solution.add(objets.get(0)); 
 
         List<List<Objet>> voisins = voisinage.nouveaux_voisins(solution, sac);
 
        
-        for (List<Objet> voisin : voisins) {
+        for (List<Objet> voisin : voisins)  {
             assertTrue(sac.respecte_budget(voisin), "Chaque voisin doit respecter le budget");
         }
-        assertFalse(voisins.isEmpty(), "Il doit y avoir au moins un voisin généré");
+        assertFalse(voisins.isEmpty(), "Il  doit y avoir au moins un voisin généré");
     }
 }

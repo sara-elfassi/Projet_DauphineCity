@@ -24,7 +24,7 @@ public class Main {
         Voisinage voisinage = new Voisinage(2);  
 
         //  Paramètres du Hill Climbing
-        boolean plateau = true;              
+        boolean plateau= true;              
         boolean voisinsAleatoires = true;    
         int nbIterations = 100;              
         int nbRedemarrage = 5;               
