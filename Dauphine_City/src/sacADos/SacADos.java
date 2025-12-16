@@ -78,7 +78,7 @@ public class SacADos {
 	
 	
 	
-	// j'ai ajouté  ces 2 methodes pour Hill Climbing
+	// j'ai ajouté  pour Hill Climbing
 	public int utilite(List<Objet> solution) {
 	    int total = 0;
 	    for (Objet o : solution) {
@@ -87,18 +87,6 @@ public class SacADos {
 	    return total;
 	}
 	
-	public List<Objet> solution_initiale_aleatoire() {
-	    List<Objet> sol = new ArrayList<>();
-	    List<Objet> listeMelangee = new ArrayList<>(objets);
-	    java.util.Collections.shuffle(listeMelangee);
-	    for (Objet o : listeMelangee) {
-	        sol.add(o);
-	        if (!respecte_budget(sol)) {
-	            sol.remove(o);
-	        }
-	    }
-	    return sol;
-	}
 
 
 
