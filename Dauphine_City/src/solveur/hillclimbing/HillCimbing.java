@@ -91,7 +91,7 @@ public class HillCimbing {
             }
 
             boolean amelioration = false;
-            int limite = voisins_aleatoires? Math.min(nb_voisins_alea_max, voisins.size()): voisins.size();
+            int  limite = voisins_aleatoires? Math.min(nb_voisins_alea_max, voisins.size()): voisins.size();
 
             for (int k = 0; k < limite; k++) {
                 List<Objet> voisin = voisins.get(k);
@@ -103,7 +103,7 @@ public class HillCimbing {
             }
 
             if (!amelioration) {
-                break; // optimum local atteint
+                break; // optimum local 
             }
         }
 
@@ -125,7 +125,7 @@ public class HillCimbing {
 
             // génère une solution initiale possible
             List<Objet> solution_initiale = new ArrayList<>();
-            List<Objet> objets = new ArrayList<>(sac.getObjets());
+            List<Objet> objets= new ArrayList<>(sac.getObjets());
             Collections.shuffle(objets);
 
             for (Objet obj : objets) {
@@ -134,7 +134,7 @@ public class HillCimbing {
                 	solution_initiale.remove(obj);
                 }
             }
-            List<Objet> solution = hillClimb(sac, solution_initiale);
+            List<Objet> solution= hillClimb(sac, solution_initiale);
             int utilite = sac.utilite(solution);
 
             if (utilite > meilleure_utilite) {

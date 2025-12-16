@@ -26,7 +26,7 @@ public class SacADos {
 	    }
 	}
 	
-	public List<Integer> getListeDimMaxDepass() {
+	public List<Integer>  getListeDimMaxDepass() {
 		List<Integer> liste_dimensions = new ArrayList<>();
 		int max_depass = 0;
 		for (int l = 0; l < dimension; l++) {
@@ -74,11 +74,6 @@ public class SacADos {
 		return objets;
 	}
 	
-	
-	
-	
-	
-	// j'ai ajouté  pour Hill Climbing
 	public int utilite(List<Objet> solution) {
 	    int total = 0;
 	    for (Objet o : solution) {
