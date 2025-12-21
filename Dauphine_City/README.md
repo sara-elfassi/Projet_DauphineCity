@@ -12,3 +12,4 @@ Il contient les packages :
   - test, qui contient les tests J-Units.
 
 
+Après avoir cloné le git, et l'avoir compilé, il faut exécuter le Main dans generer_instances, et lancer les tests J-Units présents dans test.
