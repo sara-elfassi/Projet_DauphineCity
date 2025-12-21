@@ -11,7 +11,7 @@ import sacADos.SacADos;
 import solveur.hillclimbing.HillCimbing;
 import solveur.hillclimbing.Voisinage;
 
-public class HillClimbing_test {
+public class HillClimbingTest {
     private SacADos  sac ;
     private List<Objet> objets;
     @BeforeEach
