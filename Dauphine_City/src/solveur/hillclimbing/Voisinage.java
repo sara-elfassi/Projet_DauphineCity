@@ -3,15 +3,15 @@ package solveur.hillclimbing;
 
 import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
+import  java.util.List;
 import java.util.Set;
 
-import sacADos.Objet;
-import sacADos.SacADos;
+import  sacADos.Objet;
+import  sacADos.SacADos;
 
 /**
- * Le voisinage pour le problème du sac à dos multidimensionnel pour l'algorithme de Hill Climbing.
- * Deux solutions admissibles sont voisines si l'on peut passer de l'une à l'autre en retirant et/ou ajoutant au plus t objets.
+ * Le voisinage pour le problème du sac à dos multidimensionnel pour l'algorithme de Hill Climbing
+ * Deux solutions admissibles sont voisines si l'on peut passer de l'une à l'autre en retirant et/ou ajoutant au plus t objets
  * t = 1 : ajout ou retrait d'un seul objet
  * t = 2 : échange d'un objet (retrait + ajout)
  */
@@ -26,9 +26,8 @@ public class Voisinage {
     
     /**
      * Construit un voisinage pour le Hill Climbing
-     *
-     * @param t taille du voisinage (1 ou 2)
-     * @throws IllegalArgumentException si t n'est pas égal à 1 ou 2
+     * @param t taille du voisinage (1 ou2)
+     * @throws IllegalArgumentException  si t n'est pas égal à 1 ou 2
      */
     public Voisinage(int t) {
         if (t <1 || t > 2) {
@@ -60,7 +59,7 @@ public class Voisinage {
         Set<Objet> solution_set =  new HashSet<>(solution);
 
         /* t = 1 */
-        for (Objet obj : objets) {
+        for (Objet obj : objets){
 
             // ajout d'un objet
             if (!solution_set.contains(obj)) {
@@ -72,7 +71,7 @@ public class Voisinage {
             }
 
             // retrait d'un objet
-            if (solution_set.contains(obj)) {
+            if (solution_set.contains(obj)){
                 List<Objet> voisin= new ArrayList<>(solution) ;
                 voisin.remove (obj);
                 voisins.add (voisin);
@@ -82,19 +81,19 @@ public class Voisinage {
         /* t = 2 */
         if (t == 2) {
             for (Objet retire: solution) {
-                for (Objet ajout: objets) {
-                    if (!solution_set.contains(ajout)) {
+                for (Objet ajout: objets){
+                    if (!solution_set.contains(ajout)){
                         List<Objet> voisin = new ArrayList<>(solution);
                         voisin.remove (retire);
                         voisin.add (ajout);
                         if (sac.respecte_budget(voisin)) {
-                            voisins.add(voisin);
+                            voisins.add(voisin );
                         }
                     }
                 }
             }
         }
 
-        return new  ArrayList<>(voisins);
+        return new  ArrayList<>(voisins) ;
     }
 }
