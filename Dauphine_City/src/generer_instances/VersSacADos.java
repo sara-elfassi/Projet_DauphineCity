@@ -5,7 +5,6 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 import equipe.Projet;
 import sacADos.Objet;
 import sacADos.SacADos;
@@ -19,8 +18,7 @@ import sacADos.SacADos;
 public class VersSacADos {
 
     /**
-     * Génère un SacADos à partir d'une liste de projets municipaux avec les 3 types de coûts : économique, social et environnemental.
-     *
+     * Génère un SacADos à partir d'une liste de projets municipaux avec les 3 types de coûts : économique, social et environnemental
      * @param projets liste de projets
      * @param budgets tableau des budgets pour les trois coûts
      * @return instance de SacADos
@@ -45,20 +43,19 @@ public class VersSacADos {
     
     
     /**
-     * Génère un SacADos à partir d'une liste de projets par secteur, en ne considérant que le coût économique.
-     *
+     * Génère un SacADos à  partir d'une liste de projets par secteur, en ne considérant que le coût économique
      * @param projets liste de projets
      * @param budgets_secteurs  tableau des budgets par secteur
      * @return instance de SacADos
      */
     public static SacADos generer_par_secteur(List<Projet> projets, int[] budgets_secteurs) {
         List<Objet> objets  = new ArrayList<>();
-        for (Projet p : projets) {
+        for (Projet p : projets){
             if (!p.estComplet()) continue;
             int utilite =  p.getBenefice().intValue();
             int[] couts = new int [budgets_secteurs.length];
             int secteur_index = p.getSecteur().ordinal();
-            if (secteur_index >=  0 && secteur_index < budgets_secteurs.length) {
+            if (secteur_index >=  0 && secteur_index < budgets_secteurs.length){
                 couts[secteur_index] = p.getCoutEconomique().intValue();
             }
             objets.add(new Objet(p.getTitre(), utilite, couts));
@@ -66,13 +63,14 @@ public class VersSacADos {
         return new SacADos(budgets_secteurs.length, budgets_secteurs, objets);
     }
 
+
+    
     
     
     
     
     /**
      * Génère un SacADos à partir d'un fichier d'instance 
-     *
      * @param chemin chemin vers le fichier
      * @return instance de SacADos
      * @throws IOException si le fichier n'est pas trouvé ou mal formé
@@ -83,18 +81,16 @@ public class VersSacADos {
         int n =Integer.parseInt(ligne1[0]) ; // nombre d'objets
         int k = Integer.parseInt(ligne1[1] ); // nombre de budgets
         br.readLine(); // valeur optimale ignorée
-
         // Lecture des utilités
-        String[] utilitesStr =br.readLine().trim().split("\\s+" );
+        String[] utilites_str =br.readLine().trim().split("\\s+" );
         int[] utilites =new int [n];
         for (int i = 0; i < n; i++) {
-        	if (i < utilitesStr.length) {
-        	   utilites[i] = Integer.parseInt(utilitesStr[i]);
+        	if (i < utilites_str.length) {
+        	   utilites[i] = Integer.parseInt(utilites_str[i]);
         	} else {
         	   utilites[i] = 0; // valeurs manquantes → 0
         	}
         	}
-
         // Lecture de la matrice de contraintes
         int[][] contraintes = new int[k][n];
         for (int i = 0; i < k; i++) {
@@ -107,16 +103,13 @@ public class VersSacADos {
         	   }
         	}
         	}
-
         // Lecture des budgets
-        String[] budgetsStr = br.readLine().trim().split("\\s+");
+        String[] budget_str = br.readLine().trim().split("\\s+");
         int[] budgets = new int[k];
         for (int i = 0; i < k;  i++) {
-            budgets[i] = Integer.parseInt(budgetsStr[i ]);
-        }
-
+            budgets[i] = Integer.parseInt(budget_str[i ]);}
+        
         br.close();
-
         // Création des objets
         List<Objet> objets = new ArrayList<>();
         for (int j = 0; j < n; j++) {
