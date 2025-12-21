@@ -125,6 +125,16 @@ public class Projet {
         this.coutEnvironnemental = coutEnvironnemental;
     }
 
+    /**
+     * Indique si le projet a été entièrement évalué.
+     * <p>
+     * Un projet est considéré comme complet si le bénéfice ainsi que les
+     * trois coûts (économique, social, environnemental) ont tous été renseignés.
+     * </p>
+     *
+     * @return {@code true} si le projet est complet, {@code false} sinon
+     */
+    
     public boolean estComplet() {
         return benefice != null
                && coutEconomique != null
@@ -132,6 +142,12 @@ public class Projet {
                && coutEnvironnemental != null;
     }
 
+    /**
+     * Renvoie sous forme de chaine de caractères le titre, le secteur
+     * et les valeurs d'évaluation actuellement connues pour un projet donné.
+     *
+     * @return une chaîne de caractères décrivant le projet
+     */
     @Override
     public String toString() {
         return "Projet{" +
