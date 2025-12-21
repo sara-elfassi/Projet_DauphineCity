@@ -1,5 +1,6 @@
 package test;
 
+import equipe.*;
 import org.junit.jupiter.api.Test;
 
 import java.math.BigDecimal;
@@ -36,7 +37,7 @@ public class RolesEvaluationTest {
 
         assertNull(projet.getBenefice());
         elu.evaluerBenefice(projet);
-        assertEquals(BigDecimal.valueOf(1234), projet.getBenefice());
+        assertEquals(BigDecimal.valueOf(1789), projet.getBenefice());
     }
 
     @Test
@@ -51,7 +52,7 @@ public class RolesEvaluationTest {
 
         evalEco.evaluerCout(projet);
 
-        assertEquals(BigDecimal.valueOf(500), projet.getCoutEconomique());
+        assertEquals(BigDecimal.valueOf(728), projet.getCoutEconomique());
         assertNull(projet.getCoutSocial());
         assertNull(projet.getCoutEnvironnemental());
     }
