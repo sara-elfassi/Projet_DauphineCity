@@ -29,6 +29,7 @@ class GloutonRetraitSolverTest {
 	
 	@BeforeEach
     public void initSac(){
+		objets.clear();
         objets.add(kiwi);
         objets.add(abricot);
         objets.add(mangoustan);
