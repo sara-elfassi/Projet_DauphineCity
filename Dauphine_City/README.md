@@ -13,3 +13,6 @@ Il contient les packages :
 
 
 Après avoir cloné le git, et l'avoir compilé, il faut exécuter le Main dans generer_instances, et lancer les tests J-Units présents dans test.
+
+**Remarque importante pour Eclipse** : afin de pouvoir exécuter les tests J-Unit, il est nécessaire d’ajouter la bibliothèque JUnit au projet via  
+**clic droit sur le projet → Build Path → Add Libraries → JUnit**.
